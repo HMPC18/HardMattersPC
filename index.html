@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HardMattersPC — Configs & Précommande</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <h1 class="brand">HardMattersPC</h1>
+    <nav>
+      <a href="#hero">Accueil</a>
+      <a href="#catalogue">Catalogue</a>
+      <a href="#panier">Panier</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="hero" class="hero">
+    <h2>PC montés, testés, prêts à jouer</h2>
+    <p>Des configs claires, des options simples, et un panier transparent. Ajoute au panier, choisis les options (Wi-Fi, Windows activé), et passe commande facilement.</p>
+  </section>
+
+  <section id="catalogue">
+    <h2>Catalogue</h2>
+    <div id="products" class="grid"></div>
+  </section>
+
+  <section id="panier" class="cart-section">
+    <h2>🛒 Panier</h2>
+    <div id="cart-empty" class="muted">Votre panier est vide.</div>
+    <ul id="cart-list" class="cart-list"></ul>
+    <div class="cart-footer">
+      <div class="totals">
+        <span>Total :</span>
+        <strong id="cart-total">0 €</strong>
+      </div>
+      <button id="checkout-btn" class="btn" disabled>Passer au paiement</button>
+    </div>
+    <details class="muted">
+      <summary>Note importante</summary>
+      <small>Le paiement est simulé pour l’instant. Nous pouvons activer Stripe/PayPal ensuite.</small>
+    </details>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email : hardmatterspc@gmail.com</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <small>© HardMattersPC — Tous droits réservés</small>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+<script>
+  // Menu scroll smooth
+  document.querySelectorAll('nav a').forEach(a=>{
+    a.addEventListener('click', e=>{
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if(target) target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+
+</body>
+</html>
